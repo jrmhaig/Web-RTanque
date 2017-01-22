@@ -1,0 +1,9 @@
+<svg width='1200', height='700'></svg>
+
+<script>
+d3.json('../sample_battle.json', function(error, json) {
+  if (error) return console.warn(error);
+  battle(json);
+});
+</script>
+
