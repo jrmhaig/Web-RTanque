@@ -62,7 +62,7 @@ function battle(matchData) {
   shells.exit().remove();
   explosions.exit().remove();
 
-  if ( jsonMatch.length > 0 ) {
+  if ( matchData.length > 0 ) {
     setTimeout(battle,5,matchData);
   }
 }
