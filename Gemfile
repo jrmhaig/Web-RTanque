@@ -55,3 +55,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'd3-rails', '~> 4.3'
 gem 'rtanque', git: 'https://github.com/jrmhaig/RTanque', branch: 'online_battle'
+gem 'paperclip', '~> 5.0.0'
+gem 'bcrypt', '~> 3.1.11'
+gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'rails-assets-tether'
+gem 'simple_form'

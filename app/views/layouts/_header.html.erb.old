@@ -1,0 +1,13 @@
+<nav class="navbar navbar-dark bg-inverse">
+  <%= link_to "Online Tank Battle", root_path, class: "navbar-brand" %>
+  <ul class="nav navbar-nav">
+
+    <li class="nav-item active">
+      <a class="nav-link" href="user/register">New User <span class="sr-only">(current)</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About</a>
+    </li>
+  </ul>
+</nav>
+

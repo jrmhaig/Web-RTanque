@@ -13,6 +13,7 @@ class ArenaController < ApplicationController
     ]
 
     runner = RTanque::Runner.new(1200, 700, 5000, nil)
+puts brain_paths.inspect
     brain_paths.each { |brain_path|
 #      begin
 # TODO Check that file exists
