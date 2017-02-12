@@ -1,6 +1,8 @@
 require 'rtanque/runner'
 
 class ArenaController < ApplicationController
+  after_filter :remove_tempfile, only: :random
+
   def home
   end
 
@@ -12,18 +14,17 @@ class ArenaController < ApplicationController
       'sample_bots/camper.rb'
     ]
 
-    runner = RTanque::Runner.new(1200, 700, 5000, nil)
-    brain_paths.each { |brain_path|
-#      begin
-# TODO Check that file exists
-        runner.add_brain_path(brain_path)
-#      rescue RTanque::Runner::LoadError => e
-#        say e.message, :red
-#        exit false
-#      end
-    }
-    runner.start(false)
+    @tmpfile = Tempfile.new
+    brain_paths.each do |p|
+      @tmpfile.puts(p)
+    end
+    @tmpfile.close
+    system("rake battle:create[#{@tmpfile.path}]")
 
-    render json: runner.match.match_data
+    render file: @tmpfile.path
+  end
+
+  def remove_tempfile
+    @tmpfile.unlink
   end
 end
