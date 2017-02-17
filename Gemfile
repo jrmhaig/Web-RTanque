@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'd3-rails', '~> 4.3'
 gem 'rtanque', git: 'https://github.com/jrmhaig/RTanque', branch: 'online_battle'
+gem 'devise', '~> 4.2'

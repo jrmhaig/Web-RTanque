@@ -1,6 +1,7 @@
 require 'rtanque/runner'
 
 class ArenaController < ApplicationController
+  before_action :authenticate_user!
   after_filter :remove_tempfile, only: :random
 
   def home

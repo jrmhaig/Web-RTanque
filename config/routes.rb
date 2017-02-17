@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  root 'arena#home'
+
   get 'arena/home'
   get 'arena/random', defaults: { format: :json }
 
